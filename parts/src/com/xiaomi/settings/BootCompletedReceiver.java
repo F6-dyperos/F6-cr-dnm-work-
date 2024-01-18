@@ -17,6 +17,7 @@ import android.view.Display;
 import android.view.Display.HdrCapabilities;
 
 import com.xiaomi.settings.display.ColorModeService;
+import com.xiaomi.settings.refreshrate.RefreshUtils;
 import com.xiaomi.settings.touchsampling.TouchSamplingUtils;
 import com.xiaomi.settings.touchsampling.TouchSamplingService;
 import com.xiaomi.settings.touchsampling.TouchSamplingTileService;
@@ -41,6 +42,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         TouchSamplingUtils.restoreSamplingValue(context);
         context.startServiceAsUser(new Intent(context, TouchSamplingService.class),
                 UserHandle.CURRENT);
+
+        // Refreshrate
+        RefreshUtils.startService(context);
 
         // Touch Sampling Tile Service
         context.startServiceAsUser(new Intent(context, TouchSamplingTileService.class),
