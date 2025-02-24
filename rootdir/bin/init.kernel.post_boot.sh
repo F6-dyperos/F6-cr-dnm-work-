@@ -192,7 +192,7 @@ echo 0 > /proc/sys/walt/sched_boost
 
 # Configure input boost settings
 echo 1113600 0 0 0 0 0 0 0 > /proc/sys/walt/input_boost/input_boost_freq
-echo 120 > /proc/sys/walt/input_boost/input_boost_ms
+echo 200 > /proc/sys/walt/input_boost/input_boost_ms
 
 # Configure powerkey input boost settings
 echo 1804800 0  0 2572800 0 0 0 2457600 > /proc/sys/walt/input_boost/powerkey_input_boost_freq
