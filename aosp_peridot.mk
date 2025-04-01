@@ -8,27 +8,26 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Derpfest-AOSP stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+# Inherit some common PixelProject stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from peridot device
 $(call inherit-product, device/xiaomi/peridot/device.mk)
 
-PRODUCT_NAME := derp_peridot
+PRODUCT_NAME := aosp_peridot
 PRODUCT_DEVICE := peridot
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := 24069PC21G
 
-# Derpfest
+# PixelProject
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_NOT_USES_BLUR := false
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_INCLUDE_ACCORD := false
 EXTRA_UDFPS_ICONS := true
 TARGET_HAS_UDFPS := true
-DERP_BUILDTYPE := weekly
+
+CUSTOM_BUILD_TYPE := OFFICIAL
 
 # Gapps
 WITH_GMS := true
